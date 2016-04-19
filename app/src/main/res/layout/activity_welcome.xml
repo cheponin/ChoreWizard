@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Chore Wizard 2.0!" />
+        android:text="Welcome to Chore Wizard!" />
 
     <ImageView
         android:id="@+id/welcomeImage"
@@ -22,8 +22,8 @@
         />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You better clean the kitchen or else!" />
+        android:text="You better clean the bathroom or else!" />
 
 </RelativeLayout>
