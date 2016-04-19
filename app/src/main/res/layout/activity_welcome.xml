@@ -14,8 +14,15 @@
         android:layout_height="wrap_content"
         android:text="Welcome to Chore Wizard 2.0!" />
 
+    <ImageView
+        android:id="@+id/welcomeImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/welcomeimage"
+        />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="You better clean the kitchen or else!" />
 
