@@ -17,6 +17,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You better clean the bathroom or else!" />
+        android:text="You better clean the kitchen or else!" />
 
 </RelativeLayout>
