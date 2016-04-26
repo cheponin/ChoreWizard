@@ -21,6 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Add Member"
-        android:onClick="ClickAddMember"/>
+        android:onClick="clickAddMember"/>
 
 </android.support.design.widget.CoordinatorLayout>
