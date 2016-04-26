@@ -16,6 +16,5 @@
             android:layout_height="wrap_content"
             android:text="@string/add_member"
             android:layout_gravity="center"/>
-            //android:onClick="clickText"
 
 </LinearLayout>
