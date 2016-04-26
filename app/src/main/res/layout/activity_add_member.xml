@@ -39,7 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ok"
-        android:id="@+id/add_member_done_button" />
+        android:id="@+id/add_member_done_button"
+        android:onClick="saveMemberInfo" />
 
 
 </android.support.design.widget.CoordinatorLayout>
