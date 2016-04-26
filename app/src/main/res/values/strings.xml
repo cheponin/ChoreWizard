@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">Chore Wizard</string>
-    <string name="welcome_message">Welcome to Chore Wizard! Use this app to add household members and chores and assign those chores to the members. Members will receive notifcations to be reminded to do their chores. Happy cleaning!</string>
+    <string name="welcome_message">Welcome to Chore Wizard!
+        Use this app to add household members and chores and
+        assign those chores to the members. Members will receive
+        notifcations to be reminded to do their chores.
+        Happy cleaning!</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_add_member">AddMemberActivity</string>
     <string name="member_name_field">Member Name</string>
     <string name="member_phone_field">Member Phone Number</string>
     <string name="ok">OK</string>
+    <string name="add_member">Add Member</string>
+    <string name="hello_message">Hello, ______!</string>
 </resources>

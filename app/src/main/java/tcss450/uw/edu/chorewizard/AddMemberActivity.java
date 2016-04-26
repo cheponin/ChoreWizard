@@ -20,7 +20,6 @@ public class AddMemberActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
     }
 
     public void saveMemberInfo(View view) {
