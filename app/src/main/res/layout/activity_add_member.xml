@@ -23,12 +23,23 @@
 
     <include layout="@layout/content_add_member" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <EditText
+        android:text="@string/member_name_field"
+        android:id="@+id/Member_Name"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <EditText
+        android:text="@string/member_phone_field"
+        android:id="@+id/Member_Phone"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        android:text="@string/ok"
+        android:id="@+id/add_member_done_button" />
+
 
 </android.support.design.widget.CoordinatorLayout>
