@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Add Member" />
-        //android:onClick="clickOk" will need to change to AddMember Activity
+        android:text="Add Member"
+        android:onClick="ClickAddMember"/>
 
 </android.support.design.widget.CoordinatorLayout>
