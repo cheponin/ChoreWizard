@@ -28,6 +28,8 @@ public class AddMemberActivity extends AppCompatActivity {
         mMemberPhone = phoneField.getText().toString();
 
         Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("member_name", mMemberName);
+        intent.putExtra("member_phone", mMemberPhone);
         startActivity(intent);
     }
 

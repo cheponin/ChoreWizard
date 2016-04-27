@@ -16,8 +16,15 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String nameVal = extras.getString("member_name");
+            String phoneVal = extras.getString("member_phone");
+
+            System.out.println(nameVal);
+            System.out.println(phoneVal);
+        }
     }
 
     // Takes user to AddMemberActivity
