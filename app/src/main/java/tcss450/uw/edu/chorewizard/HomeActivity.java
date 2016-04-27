@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override
@@ -22,8 +24,9 @@ public class HomeActivity extends AppCompatActivity {
             String nameVal = extras.getString("member_name");
             String phoneVal = extras.getString("member_phone");
 
-            System.out.println(nameVal);
-            System.out.println(phoneVal);
+            TextView member = (TextView) findViewById(R.id.member_1);
+            member.setText(nameVal + " - " + phoneVal);
+
         }
     }
 

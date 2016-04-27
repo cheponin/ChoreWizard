@@ -18,13 +18,13 @@
         android:orientation="vertical">
 
     <EditText
-        android:text="@string/member_name_field"
+        android:hint="@string/member_name_field"
         android:id="@+id/Member_Name"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
 
     <EditText
-        android:text="@string/member_phone_field"
+        android:hint="@string/member_phone_field"
         android:id="@+id/Member_Phone"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
