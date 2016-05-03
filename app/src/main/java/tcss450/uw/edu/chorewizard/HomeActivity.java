@@ -28,18 +28,19 @@ import java.util.List;
 import tcss450.uw.edu.chorewizard.authenticate.SignInActivity;
 import tcss450.uw.edu.chorewizard.model.Member;
 
+/**
+ * The home screen of the application which contains the list of
+ * household members and options to add members and chores.
+ */
 public class HomeActivity extends AppCompatActivity {
 
+    /** The URL to access the Member table of the database. */
     private static final String MEMBER_URL
             = "http://cssgate.insttech.washington.edu/~aclanton/project/projectTest.php?cmd=member";
 
-
-    //private final List<Member> memberList;
-
-    //public HomeActivity(List<Member> memberList) {
-       // this.memberList = memberList;
-    //}
-
+    /**
+     * An empty class constructor.
+     */
     public HomeActivity() {
 
     }
@@ -68,12 +69,37 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    // Takes user to AddMemberActivity
+    /**
+     * The action of the Add Member button in the home screen. Takes
+     * the user to the AddMemberActivity.
+     *
+     * @param view the view of the activity.
+     */
     public void clickAddMember(View view) {
         Intent intent = new Intent(this, AddMemberActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * The action of the Log Out button in the home screen. Takes
+     * the user to the SignInActivity.
+     *
+     * @param view the view of the activity.
+     */
+    public void logOut(View view) {
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getString(R.string.LOGIN_PREFS), Context.MODE_PRIVATE);
+        sharedPreferences.edit().putBoolean(getString(R.string.LOGGEDIN), false)
+                .commit();
+
+        Intent intent = new Intent(this, SignInActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * A class that is used to download Members and their information from the
+     * web service into the application to be displayed on the home screen.
+     */
     private class DownloadMembersTask extends AsyncTask<String, Void, String> {
 
         @Override
@@ -174,16 +200,5 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
-
-    public void logOut(View view) {
-        SharedPreferences sharedPreferences =
-                getSharedPreferences(getString(R.string.LOGIN_PREFS), Context.MODE_PRIVATE);
-        sharedPreferences.edit().putBoolean(getString(R.string.LOGGEDIN), false)
-                .commit();
-
-        Intent i = new Intent(this, SignInActivity.class);
-        startActivity(i);
-    }
-
 
 }
