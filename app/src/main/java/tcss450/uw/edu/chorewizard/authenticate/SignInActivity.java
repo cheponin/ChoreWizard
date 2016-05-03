@@ -10,8 +10,14 @@ import android.os.Bundle;
 import tcss450.uw.edu.chorewizard.HomeActivity;
 import tcss450.uw.edu.chorewizard.R;
 
-public class SignInActivity extends AppCompatActivity implements LoginFragment.LoginInteractionListener, LoginFragment.OnFragmentInteractionListener {
+/**
+ * The sign in screen of the application which holds the login
+ * fragment that allows the user to log in to the system.
+ */
+public class SignInActivity extends AppCompatActivity implements LoginFragment.LoginInteractionListener,
+        LoginFragment.OnFragmentInteractionListener {
 
+    /** The shared preferences of the application. */
     private SharedPreferences mSharedPreferences;
 
     @Override
@@ -46,7 +52,6 @@ public class SignInActivity extends AppCompatActivity implements LoginFragment.L
         startActivity(i);
         finish();
     }
-
 
     @Override
     public void onFragmentInteraction(Uri uri) {

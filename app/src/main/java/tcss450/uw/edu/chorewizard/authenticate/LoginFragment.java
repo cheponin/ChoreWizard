@@ -15,6 +15,9 @@ import android.widget.Toast;
 import tcss450.uw.edu.chorewizard.R;
 
 /**
+ * A login fragment which contains the fields for the user to log
+ * in to the system.
+ *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link LoginFragment.OnFragmentInteractionListener} interface
@@ -23,19 +26,20 @@ import tcss450.uw.edu.chorewizard.R;
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * An empty class constructor.
+     */
     public LoginFragment() {
-        // Required empty public constructor
+
     }
 
     /**
@@ -46,7 +50,6 @@ public class LoginFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment LoginFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static LoginFragment newInstance(String param1, String param2) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
@@ -78,7 +81,7 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 String userId = userIdText.getText().toString();
                 String pwd = pwdText.getText().toString();
-                if (TextUtils.isEmpty(userId))  {
+                if (TextUtils.isEmpty(userId)) {
                     Toast.makeText(v.getContext(), "Enter userid"
                             , Toast.LENGTH_SHORT)
                             .show();
@@ -93,7 +96,7 @@ public class LoginFragment extends Fragment {
                     return;
                 }
 
-                if (TextUtils.isEmpty(pwd))  {
+                if (TextUtils.isEmpty(pwd)) {
                     Toast.makeText(v.getContext(), "Enter password"
                             , Toast.LENGTH_SHORT)
                             .show();
@@ -115,14 +118,6 @@ public class LoginFragment extends Fragment {
         return v;
     }
 
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -141,6 +136,17 @@ public class LoginFragment extends Fragment {
     }
 
     /**
+     * The action for the login button press.
+     *
+     * @param uri the URI.
+     */
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
+    /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
@@ -151,10 +157,12 @@ public class LoginFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 
+    /**
+     * The implemented login interaction listener for this class.
+     */
     public interface LoginInteractionListener {
         public void login(String userId, String pwd);
     }
