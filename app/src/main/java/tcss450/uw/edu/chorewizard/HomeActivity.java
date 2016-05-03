@@ -1,6 +1,7 @@
 package tcss450.uw.edu.chorewizard;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,10 +10,35 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import tcss450.uw.edu.chorewizard.model.Member;
+
 public class HomeActivity extends AppCompatActivity {
+
+    private static final String MEMBER_URL
+            = "http://cssgate.insttech.washington.edu/~aclanton/project/projectTest.php?cmd=member";
+
+
+    //private final List<Member> memberList;
+
+    //public HomeActivity(List<Member> memberList) {
+       // this.memberList = memberList;
+    //}
+
+    public HomeActivity() {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +46,22 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Bundle extras = getIntent().getExtras();
+
         if (extras != null) {
+
             String nameVal = extras.getString("member_name");
             String phoneVal = extras.getString("member_phone");
 
-            TextView member = (TextView) findViewById(R.id.member_1);
-            member.setText(nameVal + " - " + phoneVal);
+            Member memberObject = new Member(nameVal, phoneVal);
+
+            TextView member = (TextView) findViewById(R.id.member_3);
+            member.setText(memberObject.getName() + " - " + memberObject.getPhone());
 
         }
+
+        DownloadMembersTask task = new DownloadMembersTask();
+        task.execute(new String[]{MEMBER_URL});
+
     }
 
     // Takes user to AddMemberActivity
@@ -35,5 +69,110 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddMemberActivity.class);
         startActivity(intent);
     }
+
+    private class DownloadMembersTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... urls) {
+            String response = "";
+            HttpURLConnection urlConnection = null;
+            for (String url : urls) {
+                try {
+                    URL urlObject = new URL(url);
+                    urlConnection = (HttpURLConnection) urlObject.openConnection();
+
+                    InputStream content = urlConnection.getInputStream();
+
+                    BufferedReader buffer = new BufferedReader(new InputStreamReader(content));
+                    String s = "";
+                    while ((s = buffer.readLine()) != null) {
+                        response += s;
+                    }
+
+                } catch (Exception e) {
+                    response = "Unable to download the list of courses, Reason: "
+                            + e.getMessage();
+                }
+                finally {
+                    if (urlConnection != null)
+                        urlConnection.disconnect();
+                }
+            }
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            // Something wrong with the network or the URL.
+            if (result.startsWith("Unable to")) {
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG)
+                        .show();
+                return;
+            }
+
+            List<Member> memberList = new ArrayList<Member>();
+            result = Member.parseCourseJSON(result, memberList);
+            // Something wrong with the JSON returned.
+            if (result != null) {
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG)
+                        .show();
+                return;
+            }
+
+            // Everything is good, show the list of courses.
+            if (!memberList.isEmpty()) {
+                for(int i = 1; i < memberList.size(); i++) {
+                    Member memberObject = memberList.get(i);
+                    switch (i) {
+                        case 1:
+                            TextView member = (TextView) findViewById(R.id.member_1);
+                            member.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 2:
+                            TextView member2 = (TextView) findViewById(R.id.member_2);
+                            member2.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 3:
+                            TextView member3 = (TextView) findViewById(R.id.member_3);
+                            member3.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 4:
+                            TextView member4 = (TextView) findViewById(R.id.member_4);
+                            member4.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 5:
+                            TextView member5 = (TextView) findViewById(R.id.member_5);
+                            member5.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 6:
+                            TextView member6 = (TextView) findViewById(R.id.member_6);
+                            member6.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 7:
+                            TextView member7 = (TextView) findViewById(R.id.member_7);
+                            member7.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 8:
+                            TextView member8 = (TextView) findViewById(R.id.member_8);
+                            member8.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 9:
+                            TextView member9 = (TextView) findViewById(R.id.member_9);
+                            member9.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                        case 10:
+                            TextView member10 = (TextView) findViewById(R.id.member_10);
+                            member10.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            break;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+
 
 }
