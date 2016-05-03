@@ -36,6 +36,7 @@ public class Member implements Serializable {
 
     /**
      * Constructor used to initialize the class fields.
+     *
      * @param name the members name.
      * @param phone the members phone number.
      */
@@ -47,14 +48,15 @@ public class Member implements Serializable {
     /**
      * Parses the json string, returns an error message if unsuccessful.
      * Returns course list if success.
-     * @param courseJSON
+     *
+     * @param memberJSON is the data file containing the members and their information.
      * @return reason or null if successful.
      */
-    public static String parseCourseJSON(String courseJSON, List<Member> memberList) {
+    public static String parseCourseJSON(String memberJSON, List<Member> memberList) {
         String reason = null;
-        if (courseJSON != null) {
+        if (memberJSON != null) {
             try {
-                JSONArray arr = new JSONArray(courseJSON);
+                JSONArray arr = new JSONArray(memberJSON);
 
                 for (int i = 0; i < arr.length(); i++) {
                     JSONObject obj = arr.getJSONObject(i);

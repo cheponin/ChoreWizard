@@ -7,7 +7,12 @@ import android.view.View;
 
 import tcss450.uw.edu.chorewizard.authenticate.SignInActivity;
 
-
+/**
+ * The welcome screen of the app which serves as a tutorial for
+ * the user.
+ *
+ * @version April 19, 2016
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
@@ -16,7 +21,12 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
     }
 
-    // Takes user to HomeActivity
+    /**
+     * The action of the Ok button in the welcome screen. Takes
+     * the user to the SignInActivity.
+     *
+     * @param view the view of the activity.
+     */
     public void clickOk(View view) {
         Intent intent = new Intent(this, SignInActivity.class);
         startActivity(intent);
