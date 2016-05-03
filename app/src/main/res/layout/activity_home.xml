@@ -20,7 +20,16 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_message" />
 
-    <Button
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/action_logout"
+            android:text="Log out"
+            android:title="@string/action_logout"
+            android:onClick="logOut"/>
+
+
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"

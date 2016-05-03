@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import tcss450.uw.edu.chorewizard.authenticate.SignInActivity;
+
+
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
@@ -15,7 +18,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
     // Takes user to HomeActivity
     public void clickOk(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, SignInActivity.class);
         startActivity(intent);
     }
+
 }
