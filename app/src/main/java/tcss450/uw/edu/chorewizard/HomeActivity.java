@@ -131,6 +131,10 @@ public class HomeActivity extends AppCompatActivity {
             return response;
         }
 
+        /**
+         * Executes one of the options below depending on the data recieved.
+         * @param result the final statement that was executed
+         */
         @Override
         protected void onPostExecute(String result) {
             // Something wrong with the network or the URL.

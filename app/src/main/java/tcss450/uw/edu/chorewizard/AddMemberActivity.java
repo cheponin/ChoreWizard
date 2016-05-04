@@ -33,18 +33,20 @@ public class AddMemberActivity extends AppCompatActivity {
      */
     private String mMemberPhone;
 
+    /** The URL where the database resides for adding additional members */
     private final static String COURSE_ADD_URL =
             "http://cssgate.insttech.washington.edu/~aclanton/project/addMember.php?";
 
-    private MemberAddListener mListener;
-
+    /** The variable that retrieves the data from the Member_Name text field in .xml file */
     private EditText mMemberNameEditText;
+
+    /** The variable that retrieves the data from the Member_Phone text field in .xml file */
     private EditText mMemberPhoneEditText;
 
-    public interface MemberAddListener {
-        public void addMember(String url);
-    }
-
+    /**
+     * Where the activity is initialized.
+     * @param savedInstanceState is the previous instance the program generated
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,30 +57,42 @@ public class AddMemberActivity extends AppCompatActivity {
 
         Button addCourseButton = (Button) findViewById(R.id.add_member_done_button);
         addCourseButton.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * The process that takes place after the addCourseButton is pressed
+             * @param v the view of the activity
+             */
             @Override
             public void onClick(View v) {
                 String url = buildMemberURL(v);
                 AddMemberTask task = new AddMemberTask();
                 task.execute(new String[]{url.toString()});
 
-                // Takes you back to the previous fragment by popping the current fragment out.
-                //getSupportFragmentManager().popBackStackImmediate()
                 Intent intent = new Intent(AddMemberActivity.this, HomeActivity.class);
                 startActivity(intent);
-
             }
         });
-
     }
 
+    /**
+     * A class that is used to push Members and their information from the
+     * application onto web server.
+     */
     private class AddMemberTask extends AsyncTask<String, Void, String> {
 
-
+        /**
+         * Before the task is executed to set up the task.
+         */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
         }
 
+        /**
+         * Used to perform background computation that is passed back to the previous step.
+         * @param urls are the urls that are created for future use
+         * @return the stringt that is generated from the urls passed in
+         */
         @Override
         protected String doInBackground(String... urls) {
             String response = "";
@@ -115,18 +129,16 @@ public class AddMemberActivity extends AppCompatActivity {
      * @param view the view of the activity.
      */
     public void saveMemberInfo(View view) {
-//        EditText nameField = (EditText) findViewById(R.id.Member_Name);
-//        mMemberName = nameField.getText().toString();
-//
-//        EditText phoneField = (EditText) findViewById(R.id.Member_Phone);
-//        mMemberPhone = phoneField.getText().toString();
 
         Intent intent = new Intent(this, HomeActivity.class);
-//        intent.putExtra("member_name", mMemberName);
-//        intent.putExtra("member_phone", mMemberPhone);
         startActivity(intent);
     }
 
+    /**
+     * Builds the string at generates at the end of the URL once a member is added.
+     * @param v is the view of the activity
+     * @return the toString that was generated
+     */
     private String buildMemberURL(View v) {
 
         StringBuilder sb = new StringBuilder(COURSE_ADD_URL);
