@@ -27,11 +27,11 @@ import tcss450.uw.edu.chorewizard.R;
  */
 public class LoginFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_NAME = "param1";
+    private static final String ARG_PHONE = "param2";
 
-    private String mParam1;
-    private String mParam2;
+    private String mName;
+    private String mPhone;
 
     private OnFragmentInteractionListener mListener;
 
@@ -46,15 +46,15 @@ public class LoginFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param mName is the name parameter.
+     * @param mPhone is the phone parameter.
      * @return A new instance of fragment LoginFragment.
      */
-    public static LoginFragment newInstance(String param1, String param2) {
+    public static LoginFragment newInstance(String mName, String mPhone) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_NAME, mName);
+        args.putString(ARG_PHONE, mPhone);
         fragment.setArguments(args);
         return fragment;
     }
@@ -63,8 +63,8 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mName = getArguments().getString(ARG_NAME);
+            mPhone = getArguments().getString(ARG_PHONE);
         }
     }
 
