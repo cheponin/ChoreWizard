@@ -132,48 +132,48 @@ public class HomeActivity extends AppCompatActivity {
                 return;
             }
 
-            // Everything is good, show the list of courses.
+            // Everything is good, show the list of members.
             if (!memberList.isEmpty()) {
-                for(int i = 1; i < memberList.size(); i++) {
+                for(int i = 0; i < memberList.size(); i++) {
                     Member memberObject = memberList.get(i);
                     switch (i) {
-                        case 1:
+                        case 0:
                             TextView member = (TextView) findViewById(R.id.member_1);
                             member.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 2:
+                        case 1:
                             TextView member2 = (TextView) findViewById(R.id.member_2);
                             member2.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 3:
+                        case 2:
                             TextView member3 = (TextView) findViewById(R.id.member_3);
                             member3.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 4:
+                        case 3:
                             TextView member4 = (TextView) findViewById(R.id.member_4);
                             member4.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 5:
+                        case 4:
                             TextView member5 = (TextView) findViewById(R.id.member_5);
                             member5.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 6:
+                        case 5:
                             TextView member6 = (TextView) findViewById(R.id.member_6);
                             member6.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 7:
+                        case 6:
                             TextView member7 = (TextView) findViewById(R.id.member_7);
                             member7.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 8:
+                        case 7:
                             TextView member8 = (TextView) findViewById(R.id.member_8);
                             member8.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 9:
+                        case 8:
                             TextView member9 = (TextView) findViewById(R.id.member_9);
                             member9.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
-                        case 10:
+                        case 9:
                             TextView member10 = (TextView) findViewById(R.id.member_10);
                             member10.setText(memberObject.getName() + " - " + memberObject.getPhone());
                             break;
