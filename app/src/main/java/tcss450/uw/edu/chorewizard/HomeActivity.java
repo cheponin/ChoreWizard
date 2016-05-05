@@ -50,20 +50,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//        Bundle extras = getIntent().getExtras();
-//
-//        if (extras != null) {
-//
-//            String nameVal = extras.getString("member_name");
-//            String phoneVal = extras.getString("member_phone");
-//
-//            Member memberObject = new Member(nameVal, phoneVal);
-//
-//            TextView member = (TextView) findViewById(R.id.member_3);
-//            member.setText(memberObject.getName() + " - " + memberObject.getPhone());
-//
-//        }
-
         DownloadMembersTask task = new DownloadMembersTask();
         task.execute(new String[]{MEMBER_URL});
 
