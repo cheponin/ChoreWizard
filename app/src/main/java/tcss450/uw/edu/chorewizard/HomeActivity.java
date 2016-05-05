@@ -5,17 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -131,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             List<Member> memberList = new ArrayList<Member>();
-            result = Member.parseCourseJSON(result, memberList);
+            result = Member.parseMemberJSON(result, memberList);
             // Something wrong with the JSON returned.
             if (result != null) {
                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG)

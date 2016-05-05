@@ -52,7 +52,7 @@ public class Member implements Serializable {
      * @param memberJSON is the data file containing the members and their information.
      * @return reason or null if successful.
      */
-    public static String parseCourseJSON(String memberJSON, List<Member> memberList) {
+    public static String parseMemberJSON(String memberJSON, List<Member> memberList) {
         String reason = null;
         if (memberJSON != null) {
             try {
