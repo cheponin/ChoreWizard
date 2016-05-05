@@ -27,8 +27,8 @@ import tcss450.uw.edu.chorewizard.R;
  */
 public class LoginFragment extends Fragment {
 
-    private static final String ARG_NAME = "param1";
-    private static final String ARG_PHONE = "param2";
+    private static final String NAME = "mName";
+    private static final String PHONE = "mPhone";
 
     private String mName;
     private String mPhone;
@@ -53,8 +53,8 @@ public class LoginFragment extends Fragment {
     public static LoginFragment newInstance(String mName, String mPhone) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_NAME, mName);
-        args.putString(ARG_PHONE, mPhone);
+        args.putString(NAME, mName);
+        args.putString(PHONE, mPhone);
         fragment.setArguments(args);
         return fragment;
     }
@@ -63,8 +63,8 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mName = getArguments().getString(ARG_NAME);
-            mPhone = getArguments().getString(ARG_PHONE);
+            mName = getArguments().getString(NAME);
+            mPhone = getArguments().getString(PHONE);
         }
     }
 

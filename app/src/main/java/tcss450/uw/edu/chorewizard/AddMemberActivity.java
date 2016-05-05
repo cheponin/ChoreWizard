@@ -75,6 +75,47 @@ public class AddMemberActivity extends AppCompatActivity {
     }
 
     /**
+     * The action of the Done button in the add member screen. Takes
+     * the user to the HomeActivity.
+     *
+     * @param view the view of the activity.
+     */
+    public void saveMemberInfo(View view) {
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Builds the string at generates at the end of the URL once a member is added.
+     * @param v is the view of the activity
+     * @return the toString that was generated
+     */
+    private String buildMemberURL(View v) {
+
+        StringBuilder sb = new StringBuilder(COURSE_ADD_URL);
+
+        try {
+
+            String name = mMemberNameEditText.getText().toString();
+            sb.append("name=");
+            sb.append(name);
+
+
+            String phone = mMemberPhoneEditText.getText().toString();
+            sb.append("&phone=");
+            sb.append(URLEncoder.encode(phone, "UTF-8"));
+
+            Log.i("Add member", sb.toString());
+
+        } catch (Exception e) {
+            Toast.makeText(v.getContext(), "Something wrong with the url" + e.getMessage(), Toast.LENGTH_LONG)
+                    .show();
+        }
+        return sb.toString();
+    }
+
+    /**
      * A class that is used to push Members and their information from the
      * application onto web server.
      */
@@ -122,44 +163,4 @@ public class AddMemberActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * The action of the Done button in the add member screen. Takes
-     * the user to the HomeActivity.
-     *
-     * @param view the view of the activity.
-     */
-    public void saveMemberInfo(View view) {
-
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-    }
-
-    /**
-     * Builds the string at generates at the end of the URL once a member is added.
-     * @param v is the view of the activity
-     * @return the toString that was generated
-     */
-    private String buildMemberURL(View v) {
-
-        StringBuilder sb = new StringBuilder(COURSE_ADD_URL);
-
-        try {
-
-            String name = mMemberNameEditText.getText().toString();
-            sb.append("name=");
-            sb.append(name);
-
-
-            String phone = mMemberPhoneEditText.getText().toString();
-            sb.append("&phone=");
-            sb.append(URLEncoder.encode(phone, "UTF-8"));
-
-            Log.i("Add member", sb.toString());
-
-        } catch (Exception e) {
-            Toast.makeText(v.getContext(), "Something wrong with the url" + e.getMessage(), Toast.LENGTH_LONG)
-                    .show();
-        }
-        return sb.toString();
-    }
 }
