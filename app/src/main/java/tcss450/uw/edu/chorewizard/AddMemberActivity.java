@@ -34,7 +34,7 @@ public class AddMemberActivity extends AppCompatActivity {
     private String mMemberPhone;
 
     /** The URL where the database resides for adding additional members */
-    private final static String COURSE_ADD_URL =
+    private final static String MEMBER_ADD_URL =
             "http://cssgate.insttech.washington.edu/~aclanton/project/addMember.php?";
 
     /** The variable that retrieves the data from the Member_Name text field in .xml file */
@@ -55,8 +55,8 @@ public class AddMemberActivity extends AppCompatActivity {
         mMemberNameEditText = (EditText) findViewById(R.id.Member_Name);
         mMemberPhoneEditText = (EditText) findViewById(R.id.Member_Phone);
 
-        Button addCourseButton = (Button) findViewById(R.id.add_member_done_button);
-        addCourseButton.setOnClickListener(new View.OnClickListener() {
+        Button addMemberButton = (Button) findViewById(R.id.add_member_done_button);
+        addMemberButton.setOnClickListener(new View.OnClickListener() {
 
             /**
              * The process that takes place after the addCourseButton is pressed
@@ -80,11 +80,11 @@ public class AddMemberActivity extends AppCompatActivity {
      *
      * @param view the view of the activity.
      */
-    public void saveMemberInfo(View view) {
-
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-    }
+//    public void saveMemberInfo(View view) {
+//
+//        Intent intent = new Intent(this, HomeActivity.class);
+//        startActivity(intent);
+//    }
 
     /**
      * Builds the string at generates at the end of the URL once a member is added.
@@ -93,7 +93,7 @@ public class AddMemberActivity extends AppCompatActivity {
      */
     private String buildMemberURL(View v) {
 
-        StringBuilder sb = new StringBuilder(COURSE_ADD_URL);
+        StringBuilder sb = new StringBuilder(MEMBER_ADD_URL);
 
         try {
 
@@ -152,7 +152,7 @@ public class AddMemberActivity extends AppCompatActivity {
                     }
 
                 } catch (Exception e) {
-                    response = "Unable to add course, Reason: "
+                    response = "Unable to add member, Reason: "
                             + e.getMessage();
                 } finally {
                     if (urlConnection != null)
