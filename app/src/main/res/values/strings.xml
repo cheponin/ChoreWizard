@@ -9,6 +9,8 @@
     <string name="title_activity_add_member">AddMemberActivity</string>
     <string name="member_name_field">Member Name</string>
     <string name="member_phone_field">Member Phone Number</string>
+    <string name="chore_name_field">Chore Name</string>
+    <string name="chore_frequency_field">Chore Frequency</string>
     <string name="ok">OK</string>
     <string name="add_member">Add Member</string>
     <string name="hello_message">Hello, ______!</string>
@@ -16,5 +18,6 @@
     <string name="LOGIN_PREFS">edu.uw.tacoma.aclanton.chorewizard.PREFS</string>
     <string name="LOGGEDIN">loggedin</string>
     <string name="action_logout" />
+    <string name="title_activity_manage_chores">ManageChoresActivity</string>
 
 </resources>

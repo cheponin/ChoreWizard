@@ -27,6 +27,11 @@
             android:label="@string/title_activity_add_member"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".authenticate.SignInActivity" />
+        <activity
+            android:name=".ManageChoresActivity"
+            android:label="@string/title_activity_manage_chores"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddChoreActivity"></activity>
     </application>
 
 </manifest>
