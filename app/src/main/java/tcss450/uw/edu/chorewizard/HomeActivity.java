@@ -59,6 +59,11 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickManageChores(View view) {
+        Intent intent = new Intent(this, ManageChoresActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * The action of the Log Out button in the home screen. Takes
      * the user to the SignInActivity.
