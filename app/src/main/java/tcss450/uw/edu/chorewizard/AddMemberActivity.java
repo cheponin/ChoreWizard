@@ -75,18 +75,6 @@ public class AddMemberActivity extends AppCompatActivity {
     }
 
     /**
-     * The action of the Done button in the add member screen. Takes
-     * the user to the HomeActivity.
-     *
-     * @param view the view of the activity.
-     */
-//    public void saveMemberInfo(View view) {
-//
-//        Intent intent = new Intent(this, HomeActivity.class);
-//        startActivity(intent);
-//    }
-
-    /**
      * Builds the string at generates at the end of the URL once a member is added.
      * @param v is the view of the activity
      * @return the toString that was generated
