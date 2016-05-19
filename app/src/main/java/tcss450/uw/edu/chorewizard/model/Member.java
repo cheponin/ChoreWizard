@@ -76,6 +76,12 @@ public class Member implements Serializable {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException();
+        } else if (name.length() > 25) {
+            throw new IllegalArgumentException();
+        }
+
         this.name = name;
     }
 
@@ -84,6 +90,12 @@ public class Member implements Serializable {
     }
 
     public void setPhone(String phone) {
+        if (phone == null) {
+            throw new IllegalArgumentException();
+        } else if (phone.length() > 10) {
+            throw new IllegalArgumentException();
+        }
+
         this.phone = phone;
     }
 

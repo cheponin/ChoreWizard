@@ -53,6 +53,12 @@ public class Chore {
     }
 
     public void setmChoreName(String mChoreName) {
+        if (mChoreName == null) {
+            throw new IllegalArgumentException();
+        } else if (mChoreName.length() > 25) {
+            throw new IllegalArgumentException();
+        }
+
         this.mChoreName = mChoreName;
     }
 
@@ -61,6 +67,12 @@ public class Chore {
     }
 
     public void setmChoreFrequency(String mChoreFrequency) {
+        if (mChoreFrequency == null) {
+            throw new IllegalArgumentException();
+        } else if (mChoreFrequency.length() > 25) {
+            throw new IllegalArgumentException();
+        }
+
         this.mChoreFrequency = mChoreFrequency;
     }
 
