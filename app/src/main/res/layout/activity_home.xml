@@ -32,31 +32,31 @@
         <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Add Member"
         android:onClick="clickAddMember"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="Manage Chores"
             android:onClick="clickManageChores"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="Send SMS Notifications"
             android:onClick="clickSendNotifications"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:id="@+id/member_1"/>
 
     <TextView
