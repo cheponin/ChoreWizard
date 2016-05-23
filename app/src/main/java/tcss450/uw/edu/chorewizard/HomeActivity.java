@@ -3,6 +3,7 @@ package tcss450.uw.edu.chorewizard;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,8 @@ import tcss450.uw.edu.chorewizard.model.Member;
  * household members and options to add members and chores.
  */
 public class HomeActivity extends AppCompatActivity {
+
+    private List<Member> mMemberList;
 
     /** The URL to access the Member table of the database. */
     private static final String MEMBER_URL
@@ -62,6 +65,22 @@ public class HomeActivity extends AppCompatActivity {
     public void clickManageChores(View view) {
         Intent intent = new Intent(this, ManageChoresActivity.class);
         startActivity(intent);
+    }
+
+    public void clickSendNotifications(View view) {
+        if (mMemberList != null || !mMemberList.isEmpty()) {
+            String messageText = "Hey, don't forget to do your chore for the week! :)";
+            String phoneNumber = "";
+
+            for (int i = 0; i < mMemberList.size(); i++) {
+                phoneNumber = mMemberList.get(i).getPhone();
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("sms:" + phoneNumber));
+                intent.putExtra("sms_body", messageText);
+                startActivity(intent);
+            }
+        }
     }
 
     /**
@@ -139,6 +158,7 @@ public class HomeActivity extends AppCompatActivity {
 
             // Everything is good, show the list of members.
             if (!memberList.isEmpty()) {
+                mMemberList = memberList;
                 for(int i = 0; i < memberList.size(); i++) {
                     Member memberObject = memberList.get(i);
                     switch (i) {
