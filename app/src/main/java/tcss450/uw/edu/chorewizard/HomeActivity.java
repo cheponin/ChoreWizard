@@ -282,42 +282,42 @@ public class HomeActivity extends AppCompatActivity {
                             TextView chore = (TextView) findViewById(R.id.chore_1);
                             chore.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
                             break;
-//                        case 1:
-//                            TextView chore2 = (TextView) findViewById(R.id.chore_2);
-//                            chore2.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 2:
-//                            TextView chore3 = (TextView) findViewById(R.id.chore_3);
-//                            chore3.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 3:
-//                            TextView chore4 = (TextView) findViewById(R.id.chore_4);
-//                            chore4.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 4:
-//                            TextView chore5 = (TextView) findViewById(R.id.chore_5);
-//                            chore5.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 5:
-//                            TextView chore6 = (TextView) findViewById(R.id.chore_6);
-//                            chore6.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 6:
-//                            TextView chore7 = (TextView) findViewById(R.id.chore_7);
-//                            chore7.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 7:
-//                            TextView chore8 = (TextView) findViewById(R.id.chore_8);
-//                            chore8.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 8:
-//                            TextView chore9 = (TextView) findViewById(R.id.chore_9);
-//                            chore9.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
-//                        case 9:
-//                            TextView chore10 = (TextView) findViewById(R.id.chore_10);
-//                            chore10.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
-//                            break;
+                        case 1:
+                            TextView chore2 = (TextView) findViewById(R.id.chore_2);
+                            chore2.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 2:
+                            TextView chore3 = (TextView) findViewById(R.id.chore_3);
+                            chore3.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 3:
+                            TextView chore4 = (TextView) findViewById(R.id.chore_4);
+                            chore4.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 4:
+                            TextView chore5 = (TextView) findViewById(R.id.chore_5);
+                            chore5.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 5:
+                            TextView chore6 = (TextView) findViewById(R.id.chore_6);
+                            chore6.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 6:
+                            TextView chore7 = (TextView) findViewById(R.id.chore_7);
+                            chore7.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 7:
+                            TextView chore8 = (TextView) findViewById(R.id.chore_8);
+                            chore8.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 8:
+                            TextView chore9 = (TextView) findViewById(R.id.chore_9);
+                            chore9.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
+                        case 9:
+                            TextView chore10 = (TextView) findViewById(R.id.chore_10);
+                            chore10.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            break;
                     }
                 }
             }

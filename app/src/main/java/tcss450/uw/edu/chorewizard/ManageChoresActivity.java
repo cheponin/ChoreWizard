@@ -25,8 +25,8 @@ import tcss450.uw.edu.chorewizard.model.Member;
 public class ManageChoresActivity extends AppCompatActivity {
 
     /** The URL to access the Course table of the database. */
-    private static final String CHORE_URL
-            = "http://cssgate.insttech.washington.edu/~aclanton/project/projectChoreTest.php?cmd=chore";
+//    private static final String CHORE_URL
+//            = "http://cssgate.insttech.washington.edu/~aclanton/project/projectChoreTest.php?cmd=chore";
 
     public ManageChoresActivity() {
 

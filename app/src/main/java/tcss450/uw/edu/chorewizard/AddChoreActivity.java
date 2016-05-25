@@ -60,7 +60,7 @@ public class AddChoreActivity extends AppCompatActivity {
                 AddChoreTask task = new AddChoreTask();
                 task.execute(new String[]{url.toString()});
 
-                Intent intent = new Intent(AddChoreActivity.this, ManageChoresActivity.class);
+                Intent intent = new Intent(AddChoreActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
