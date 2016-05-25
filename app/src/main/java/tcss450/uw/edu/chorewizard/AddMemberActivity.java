@@ -82,23 +82,22 @@ public class AddMemberActivity extends AppCompatActivity {
     private String buildMemberURL(View v) {
 
         StringBuilder sb = new StringBuilder(MEMBER_ADD_URL);
+        String name = mMemberNameEditText.getText().toString();
+        String phone = mMemberPhoneEditText.getText().toString();
 
-        try {
+        if (!name.isEmpty() && !phone.isEmpty()) {
+            try {
+                sb.append("name=");
+                sb.append(name);
+                sb.append("&phone=");
+                sb.append(URLEncoder.encode(phone, "UTF-8"));
 
-            String name = mMemberNameEditText.getText().toString();
-            sb.append("name=");
-            sb.append(name);
+                Log.i("Add member", sb.toString());
 
-
-            String phone = mMemberPhoneEditText.getText().toString();
-            sb.append("&phone=");
-            sb.append(URLEncoder.encode(phone, "UTF-8"));
-
-            Log.i("Add member", sb.toString());
-
-        } catch (Exception e) {
-            Toast.makeText(v.getContext(), "Something wrong with the url" + e.getMessage(), Toast.LENGTH_LONG)
-                    .show();
+            } catch (Exception e) {
+                Toast.makeText(v.getContext(), "Something wrong with the url" + e.getMessage(), Toast.LENGTH_LONG)
+                        .show();
+            }
         }
         return sb.toString();
     }

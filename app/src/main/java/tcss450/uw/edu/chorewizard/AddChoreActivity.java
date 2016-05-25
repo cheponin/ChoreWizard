@@ -74,24 +74,24 @@ public class AddChoreActivity extends AppCompatActivity {
     private String buildChoreURL(View v) {
 
         StringBuilder sb = new StringBuilder(CHORE_ADD_URL);
+        String chore = mChoreNameEditText.getText().toString();
+        String frequency = mChoreFrequencyEditText.getText().toString();
 
-        try {
+        if (!chore.isEmpty() && !frequency.isEmpty()) {
+            try {
+                sb.append("name=");
+                sb.append(chore);
+                sb.append("&frequency=");
+                sb.append(URLEncoder.encode(frequency, "UTF-8"));
 
-            String chore = mChoreNameEditText.getText().toString();
-            sb.append("name=");
-            sb.append(chore);
+                Log.i("Add chore", sb.toString());
 
-
-            String frequency = mChoreFrequencyEditText.getText().toString();
-            sb.append("&frequency=");
-            sb.append(URLEncoder.encode(frequency, "UTF-8"));
-
-            Log.i("Add chore", sb.toString());
-
-        } catch (Exception e) {
-            Toast.makeText(v.getContext(), "Something wrong with the url" + e.getMessage(), Toast.LENGTH_LONG)
-                    .show();
+            } catch (Exception e) {
+                Toast.makeText(v.getContext(), "Something wrong with the url" + e.getMessage(), Toast.LENGTH_LONG)
+                        .show();
+            }
         }
+
         return sb.toString();
     }
 
