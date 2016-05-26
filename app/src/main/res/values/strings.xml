@@ -21,7 +21,7 @@
     <string name="title_activity_manage_chores">ManageChoresActivity</string>
 
     <string name="CREATE_ASSIGNEDCHORE_SQL">
-        CREATE TABLE IF NOT EXISTS AssignedChored
+        CREATE TABLE IF NOT EXISTS AssignedChore
         (name TEXT PRIMARY KEY, chore TEXT)
     </string>
 

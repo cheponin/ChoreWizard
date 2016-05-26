@@ -23,6 +23,7 @@ import java.util.List;
 
 import tcss450.uw.edu.chorewizard.authenticate.SignInActivity;
 import tcss450.uw.edu.chorewizard.data.AssignedChoreDB;
+import tcss450.uw.edu.chorewizard.model.AssignedChore;
 import tcss450.uw.edu.chorewizard.model.Chore;
 import tcss450.uw.edu.chorewizard.model.Member;
 
@@ -34,7 +35,9 @@ public class HomeActivity extends AppCompatActivity {
 
     private List<Member> mMemberList;
     private List<Chore> mChoreList;
+    private List<AssignedChore> mAssignedChoreList;
     private AssignedChoreDB mAssignedChoreDB;
+
     /** The URL to access the Member table of the database. */
     private static final String MEMBER_URL
             = "http://cssgate.insttech.washington.edu/~aclanton/project/projectTest.php?cmd=member";
@@ -59,6 +62,13 @@ public class HomeActivity extends AppCompatActivity {
 
         DownloadChoresTask choreTask = new DownloadChoresTask();
         choreTask.execute(new String[]{CHORE_URL});
+
+        if (mAssignedChoreDB == null) {
+            mAssignedChoreDB = new AssignedChoreDB(HomeActivity.this);
+        }
+        if (mAssignedChoreList == null) {
+            mAssignedChoreList = mAssignedChoreDB.getAssignedChores();
+        }
     }
 
     /**
@@ -360,13 +370,13 @@ public class HomeActivity extends AppCompatActivity {
             super(context, name, factory, version);
             CREATE_ASSIGNEDCHORE_SQL = context.getString(R.string.CREATE_ASSIGNEDCHORE_SQL);
             DROP_ASSIGNEDCHORE_SQL = context.getString(R.string.DROP_ASSIGNEDCHORE_SQL);
-
+            System.out.println("Did the DB Helper get created?");
         }
 
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
             sqLiteDatabase.execSQL(CREATE_ASSIGNEDCHORE_SQL);
-            System.out.println("Does this sqlite stuffz workz??????????????");
+            System.out.println("Does this code run??");
         }
 
         @Override
@@ -377,4 +387,4 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-    }
+}
