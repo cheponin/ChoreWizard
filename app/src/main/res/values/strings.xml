@@ -20,4 +20,13 @@
     <string name="action_logout" />
     <string name="title_activity_manage_chores">ManageChoresActivity</string>
 
+    <string name="CREATE_ASSIGNEDCHORE_SQL">
+        CREATE TABLE IF NOT EXISTS AssignedChored
+        (name TEXT PRIMARY KEY, chore TEXT)
+    </string>
+
+    <string name="DROP_ASSIGNEDCHORE_SQL">
+        DROP TABLE IF EXISTS AssignedChore
+    </string>
+
 </resources>

@@ -3,6 +3,8 @@ package tcss450.uw.edu.chorewizard;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tcss450.uw.edu.chorewizard.authenticate.SignInActivity;
+import tcss450.uw.edu.chorewizard.data.AssignedChoreDB;
 import tcss450.uw.edu.chorewizard.model.Chore;
 import tcss450.uw.edu.chorewizard.model.Member;
 
@@ -30,7 +33,8 @@ import tcss450.uw.edu.chorewizard.model.Member;
 public class HomeActivity extends AppCompatActivity {
 
     private List<Member> mMemberList;
-
+    private List<Chore> mChoreList;
+    private AssignedChoreDB mAssignedChoreDB;
     /** The URL to access the Member table of the database. */
     private static final String MEMBER_URL
             = "http://cssgate.insttech.washington.edu/~aclanton/project/projectTest.php?cmd=member";
@@ -49,12 +53,17 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        System.out.println("onCreate before tasks created");
 
         DownloadMembersTask task = new DownloadMembersTask();
         task.execute(new String[]{MEMBER_URL});
 
+        System.out.println("onCreate after member task created");
+
         DownloadChoresTask choreTask = new DownloadChoresTask();
         choreTask.execute(new String[]{CHORE_URL});
+
+        System.out.println("onCreate after chore task created");
 
     }
 
@@ -163,6 +172,27 @@ public class HomeActivity extends AppCompatActivity {
                 return;
             }
 
+            if (memberList != null) {
+                if (!memberList.isEmpty()) {
+                    if (mChoreList != null) {
+                        if (!mChoreList.isEmpty()) {
+                            if (mAssignedChoreDB == null) {
+                                mAssignedChoreDB = new AssignedChoreDB(HomeActivity.this);
+                            }
+
+                            // Also, add to the local database
+                            int size = Math.min(mChoreList.size(), mMemberList.size());
+                            for (int i = 0; i < size; i++) {
+                                Chore chore = mChoreList.get(i);
+                                Member member = mMemberList.get(i);
+                                mAssignedChoreDB.insertAssignedChore(chore.getmChoreName(),
+                                        member.getName());
+                            }
+
+                        }
+                    }
+                }
+            }
             // Everything is good, show the list of members.
             if (!memberList.isEmpty()) {
                 mMemberList = memberList;
@@ -275,6 +305,7 @@ public class HomeActivity extends AppCompatActivity {
 
             // Everything is good, show the list of chores.
             if (!choreList.isEmpty()) {
+                mChoreList = choreList;
                 for(int i = 0; i < choreList.size(); i++) {
                     Chore choreObject = choreList.get(i);
                     switch (i) {
@@ -325,4 +356,30 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-}
+    public static class AssignedChoreDBHelper extends SQLiteOpenHelper {
+
+        private final String CREATE_ASSIGNEDCHORE_SQL;
+
+        private final String DROP_ASSIGNEDCHORE_SQL;
+
+        public AssignedChoreDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+            super(context, name, factory, version);
+            CREATE_ASSIGNEDCHORE_SQL = context.getString(R.string.CREATE_ASSIGNEDCHORE_SQL);
+            DROP_ASSIGNEDCHORE_SQL = context.getString(R.string.DROP_ASSIGNEDCHORE_SQL);
+
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase sqLiteDatabase) {
+            sqLiteDatabase.execSQL(CREATE_ASSIGNEDCHORE_SQL);
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+            sqLiteDatabase.execSQL(DROP_ASSIGNEDCHORE_SQL);
+            onCreate(sqLiteDatabase);
+        }
+    }
+
+
+    }

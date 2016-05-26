@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="tcss450.uw.edu.chorewizard.authenticate.LoginFragment">
+    tools:context="tcss450.uw.edu.chorewizard.authenticate.LoginFragment"
+    android:weightSum="1"
+    android:background="#FFCAD7E3">
 
     <EditText
         android:layout_width="match_parent"
@@ -11,7 +13,8 @@
         android:id="@+id/user_id"
         android:hint="Enter your userid"
         android:layout_gravity="left"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        android:layout_weight="0.04" />
 
     <EditText
         android:layout_width="match_parent"
@@ -22,9 +25,10 @@
         android:inputType="text"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:id="@+id/signin_button"
-        android:text="Sign in"/>
+        android:text="Sign in"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
