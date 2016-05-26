@@ -53,18 +53,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        System.out.println("onCreate before tasks created");
 
         DownloadMembersTask task = new DownloadMembersTask();
         task.execute(new String[]{MEMBER_URL});
 
-        System.out.println("onCreate after member task created");
-
         DownloadChoresTask choreTask = new DownloadChoresTask();
         choreTask.execute(new String[]{CHORE_URL});
-
-        System.out.println("onCreate after chore task created");
-
     }
 
     /**
@@ -372,6 +366,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
             sqLiteDatabase.execSQL(CREATE_ASSIGNEDCHORE_SQL);
+            System.out.println("Does this sqlite stuffz workz??????????????");
         }
 
         @Override
