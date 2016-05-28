@@ -5,7 +5,16 @@
     android:orientation="vertical"
     tools:context="tcss450.uw.edu.chorewizard.authenticate.LoginFragment"
     android:weightSum="1"
-    android:background="#FFCAD7E3">
+    android:background="#B7C0EF">
+
+    <ImageView
+        android:id="@+id/loginImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/cwlogin"
+        />
 
     <EditText
         android:layout_width="match_parent"
