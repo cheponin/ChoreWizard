@@ -29,11 +29,11 @@
 
     <ImageView
         android:id="@+id/welcomeImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="255dp"
+        android:layout_height="214dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:src="@drawable/welcomeimage"
+        android:src="@drawable/cwcleaning"
         />
 
     <Button
