@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tcss450.uw.edu.chorewizard.AddChoreActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#B7C0EF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/addChoreImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/cwaddchore"
+            />
 
     <EditText
         android:hint="@string/chore_name_field"
@@ -28,6 +44,8 @@
         android:layout_marginTop="100dp"
         android:text="@string/ok"
         android:id="@+id/add_chore_done_button"
-        android:onClick="saveChoreInfo" />
+        android:onClick="saveChoreInfo"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

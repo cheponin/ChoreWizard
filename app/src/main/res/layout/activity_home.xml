@@ -10,26 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
+    android:background="#B7C0EF"
     tools:context="tcss450.uw.edu.chorewizard.HomeActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_message" />
-
-        <Button
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/action_logout"
-            android:text="Log out"
-            android:title="@string/action_logout"
-            android:onClick="logOut"/>
-
-    </LinearLayout>
+            android:layout_height="wrap_content">
+        </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/member_1" />
 
         <TextView
@@ -94,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_2"/>
 
         <TextView
@@ -112,6 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_3"/>
 
         <TextView
@@ -131,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_4"/>
 
         <TextView
@@ -150,6 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_5"/>
 
         <TextView
@@ -169,6 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_6"/>
 
         <TextView
@@ -188,6 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_7"/>
 
         <TextView
@@ -207,6 +201,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_8"/>
 
         <TextView
@@ -226,6 +221,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_9"/>
 
         <TextView
@@ -245,6 +241,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="18sp"
             android:id="@+id/member_10"/>
 
         <TextView
@@ -256,5 +253,14 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/action_logout"
+        android:text="Log out"
+        android:title="@string/action_logout"
+        android:layout_gravity="right"
+        android:onClick="logOut"/>
 
 </LinearLayout>
