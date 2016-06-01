@@ -231,43 +231,43 @@ public class HomeActivity extends AppCompatActivity {
                     switch (i) {
                         case 0:
                             TextView member = (TextView) findViewById(R.id.member_1);
-                            member.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 1:
                             TextView member2 = (TextView) findViewById(R.id.member_2);
-                            member2.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member2.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 2:
                             TextView member3 = (TextView) findViewById(R.id.member_3);
-                            member3.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member3.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 3:
                             TextView member4 = (TextView) findViewById(R.id.member_4);
-                            member4.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member4.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 4:
                             TextView member5 = (TextView) findViewById(R.id.member_5);
-                            member5.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member5.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 5:
                             TextView member6 = (TextView) findViewById(R.id.member_6);
-                            member6.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member6.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 6:
                             TextView member7 = (TextView) findViewById(R.id.member_7);
-                            member7.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member7.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 7:
                             TextView member8 = (TextView) findViewById(R.id.member_8);
-                            member8.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member8.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 8:
                             TextView member9 = (TextView) findViewById(R.id.member_9);
-                            member9.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member9.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                         case 9:
                             TextView member10 = (TextView) findViewById(R.id.member_10);
-                            member10.setText(memberObject.getName() + " - " + memberObject.getPhone());
+                            member10.setText(memberObject.getName() + " " + memberObject.getPhone());
                             break;
                     }
                 }
@@ -341,43 +341,43 @@ public class HomeActivity extends AppCompatActivity {
                     switch (i) {
                         case 0:
                             TextView chore = (TextView) findViewById(R.id.chore_1);
-                            chore.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore.setText(choreObject.getmChoreName());
                             break;
                         case 1:
                             TextView chore2 = (TextView) findViewById(R.id.chore_2);
-                            chore2.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore2.setText(choreObject.getmChoreName());
                             break;
                         case 2:
                             TextView chore3 = (TextView) findViewById(R.id.chore_3);
-                            chore3.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore3.setText(choreObject.getmChoreName());
                             break;
                         case 3:
                             TextView chore4 = (TextView) findViewById(R.id.chore_4);
-                            chore4.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore4.setText(choreObject.getmChoreName());
                             break;
                         case 4:
                             TextView chore5 = (TextView) findViewById(R.id.chore_5);
-                            chore5.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore5.setText(choreObject.getmChoreName());
                             break;
                         case 5:
                             TextView chore6 = (TextView) findViewById(R.id.chore_6);
-                            chore6.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore6.setText(choreObject.getmChoreName());
                             break;
                         case 6:
                             TextView chore7 = (TextView) findViewById(R.id.chore_7);
-                            chore7.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore7.setText(choreObject.getmChoreName());
                             break;
                         case 7:
                             TextView chore8 = (TextView) findViewById(R.id.chore_8);
-                            chore8.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore8.setText(choreObject.getmChoreName());
                             break;
                         case 8:
                             TextView chore9 = (TextView) findViewById(R.id.chore_9);
-                            chore9.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore9.setText(choreObject.getmChoreName());
                             break;
                         case 9:
                             TextView chore10 = (TextView) findViewById(R.id.chore_10);
-                            chore10.setText(choreObject.getmChoreName() + " - " + choreObject.getmChoreFrequency());
+                            chore10.setText(choreObject.getmChoreName());
                             break;
                     }
                 }
