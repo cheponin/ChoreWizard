@@ -63,13 +63,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_1" />
         </LinearLayout>
 
@@ -82,13 +83,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_2"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_2" />
         </LinearLayout>
 
@@ -101,13 +103,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_3"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_3" />
 
         </LinearLayout>
@@ -121,13 +124,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_4"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_4" />
 
         </LinearLayout>
@@ -141,13 +145,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_5"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_5" />
 
         </LinearLayout>
@@ -161,13 +166,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_6"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_6" />
 
         </LinearLayout>
@@ -181,13 +187,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_7"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_7" />
 
         </LinearLayout>
@@ -201,13 +208,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_8"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_8" />
 
         </LinearLayout>
@@ -221,13 +229,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_9"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_9" />
 
         </LinearLayout>
@@ -241,13 +250,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:id="@+id/member_10"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textSize="18sp"
             android:id="@+id/chore_10" />
 
         </LinearLayout>
