@@ -17,6 +17,7 @@ import tcss450.uw.edu.chorewizard.R;
 /**
  * A login fragment which contains the fields for the user to log
  * in to the system.
+ * Created by alice on 4/28/2016.
  *
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -27,12 +28,25 @@ import tcss450.uw.edu.chorewizard.R;
  */
 public class LoginFragment extends Fragment {
 
+    /** Constant to hold the name of the class field. */
     private static final String NAME = "mName";
+
+    /** Constant to hold the phone number of the class field. */
     private static final String PHONE = "mPhone";
 
+    /**
+     * The household member's name
+     */
     private String mName;
+
+    /**
+     * The household member's phone
+     */
     private String mPhone;
 
+    /**
+     * The listener created by the OnFragmentInteractionListener interface.
+     */
     private OnFragmentInteractionListener mListener;
 
     /**

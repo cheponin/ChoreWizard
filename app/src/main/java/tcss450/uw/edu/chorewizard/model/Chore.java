@@ -7,16 +7,29 @@ import org.json.JSONObject;
 import java.util.List;
 
 /**
+ * The class that models the attributes of a chore.
  * Created by alice on 5/10/2016.
  */
 public class Chore {
 
+    /**
+     * The chore's name.
+     */
     private String mChoreName;
+
+    /**
+     * The chore's frequency.
+     */
     private String mChoreFrequency;
 
     /** Constants to hold the names of the class fields. */
     public static final String NAME = "name", FREQUENCY = "frequency";
 
+    /**
+     * The Chore constructor.
+     * @param mChoreName is assigned to the global variable
+     * @param mChoreFrequency is assigned to the global variable
+     */
     public Chore(String mChoreName, String mChoreFrequency) {
         this.mChoreName = mChoreName;
         this.mChoreFrequency = mChoreFrequency;
@@ -76,6 +89,7 @@ public class Chore {
         this.mChoreFrequency = mChoreFrequency;
     }
 
+    @Override
     public String toString() {
         return mChoreName + " " + mChoreFrequency;
     }

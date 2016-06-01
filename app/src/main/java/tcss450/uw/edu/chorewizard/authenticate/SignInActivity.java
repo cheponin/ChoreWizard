@@ -13,6 +13,7 @@ import tcss450.uw.edu.chorewizard.R;
 /**
  * The sign in screen of the application which holds the login
  * fragment that allows the user to log in to the system.
+ * Created by alice on 4/28/2016.
  */
 public class SignInActivity extends AppCompatActivity implements LoginFragment.LoginInteractionListener,
         LoginFragment.OnFragmentInteractionListener {
