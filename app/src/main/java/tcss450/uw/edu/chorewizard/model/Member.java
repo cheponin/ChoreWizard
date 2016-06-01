@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class Member implements Serializable {
 
-    /** The household members name. */
+    /** The household member's name. */
     private String name;
 
-    /** The household members phone number. */
+    /** The household member's phone number. */
     private String phone;
 
     /** Constants to hold the names of the class fields. */

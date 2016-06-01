@@ -33,9 +33,24 @@ import tcss450.uw.edu.chorewizard.model.Member;
  */
 public class HomeActivity extends AppCompatActivity {
 
+    /**
+     * The list of Members.
+     */
     private List<Member> mMemberList;
+
+    /**
+     * The list of chores.
+     */
     private List<Chore> mChoreList;
+
+    /**
+     * The list of assigned chores.
+     */
     private List<AssignedChore> mAssignedChoreList;
+
+    /**
+     * The database where the assigned chores are stored.
+     */
     private AssignedChoreDB mAssignedChoreDB;
 
     /** The URL to access the Member table of the database. */
@@ -82,11 +97,22 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * The action of the Add Chore button in the hone screen. Takes
+     * the user to the AddChoreActivity.
+     * @param view the view of the activity.
+     */
     public void clickAddChore(View view) {
         Intent intent = new Intent(this, AddChoreActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * The action of the Send Notification button in the hone screen. Takes
+     * the user to the built-in text messaging application to send a
+     * pre-written text message.
+     * @param view the view of the activity.
+     */
     public void clickSendNotifications(View view) {
         if (mMemberList != null || !mMemberList.isEmpty()) {
             String messageText = "Hey, don't forget to do your chore for the week! :)";
@@ -360,12 +386,28 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * The inner helper class for assigning chores.
+     */
     public static class AssignedChoreDBHelper extends SQLiteOpenHelper {
 
+        /**
+         * The constant variable for creating an assigned chore.
+         */
         private final String CREATE_ASSIGNEDCHORE_SQL;
 
+        /**
+         * The constant variable for dropping an assigned chore.
+         */
         private final String DROP_ASSIGNEDCHORE_SQL;
 
+        /**
+         * The inner class constructor for assigning chores helper.
+         * @param context the execution of the application
+         * @param name the name of the helper
+         * @param factory the name of the sqlite database
+         * @param version the version number of the sqlite database
+         */
         public AssignedChoreDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
             super(context, name, factory, version);
             CREATE_ASSIGNEDCHORE_SQL = context.getString(R.string.CREATE_ASSIGNEDCHORE_SQL);

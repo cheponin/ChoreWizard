@@ -17,26 +17,30 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+/**
+ * The add chore screen of the application which provides a form
+ * for the user to fill out to add a new chore.
+ */
 public class AddChoreActivity extends AppCompatActivity {
 
     /**
-     * The member name.
+     * The chore name.
      */
     private String mChoreName;
 
     /**
-     * The member phone number.
+     * The chore frequency.
      */
     private String mChoreFrequency;
 
-    /** The URL where the database resides for adding additional members */
+    /** The URL where the database resides for adding additional chores */
     private final static String CHORE_ADD_URL =
             "http://cssgate.insttech.washington.edu/~aclanton/project/addChore.php?";
 
-    /** The variable that retrieves the data from the Member_Name text field in .xml file */
+    /** The variable that retrieves the data from the Chore_Name text field in .xml file */
     private EditText mChoreNameEditText;
 
-    /** The variable that retrieves the data from the Member_Phone text field in .xml file */
+    /** The variable that retrieves the data from the Chore_Frequency text field in .xml file */
     private EditText mChoreFrequencyEditText;
 
     @Override

@@ -11,6 +11,7 @@ import tcss450.uw.edu.chorewizard.model.Chore;
 import tcss450.uw.edu.chorewizard.model.Member;
 
 /**
+ * The chore test class.
  * Created by chepovska_nina on 5/19/16.
  */
 public class ChoreTest extends TestCase {
@@ -29,6 +30,9 @@ public class ChoreTest extends TestCase {
         assertTrue("JSON With Valid String", message == null);
     }
 
+    /**
+     * The chore variable.
+     */
     private Chore chore;
 
     @Before

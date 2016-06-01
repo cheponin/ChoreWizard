@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import tcss450.uw.edu.chorewizard.model.Member;
 
 /**
+ * The Member test class.
  * Created by chepovska_nina on 5/19/16.
  */
 public class MemberTest extends TestCase {
@@ -28,6 +29,9 @@ public class MemberTest extends TestCase {
         assertTrue("JSON With Valid String", message == null);
     }
 
+    /**
+     * The member variable.
+     */
     private Member member;
 
     @Before

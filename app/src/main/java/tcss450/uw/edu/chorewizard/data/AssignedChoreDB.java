@@ -13,18 +13,40 @@ import tcss450.uw.edu.chorewizard.model.AssignedChore;
 import tcss450.uw.edu.chorewizard.model.Chore;
 
 /**
+ * This class pull the data from the SQLite database for the chore table.
  * Created by alice on 5/26/2016.
  */
 public class AssignedChoreDB {
 
+    /**
+     * The constant for the database version.
+     */
     public static final int DB_VERSION = 1;
+
+    /**
+     * The constant for the database name.
+     */
     public static final String DB_NAME = "AssignedChore.db";
 
+    /**
+     * The helper variable pulled from the HomeActivity class.
+     */
     private HomeActivity.AssignedChoreDBHelper mAssignedChoreDBHelper;
+
+    /**
+     * The SQLite database variable.
+     */
     private SQLiteDatabase mSQLiteDatabase;
 
+    /**
+     * The assigned chore variable.
+     */
     private static final String ASSIGNEDCHORE_TABLE = "AssignedChore";
 
+    /**
+     * Pulls the chores from the sqlite database.
+     * @param context executes this action
+     */
     public AssignedChoreDB(Context context) {
         mAssignedChoreDBHelper = new HomeActivity.AssignedChoreDBHelper(
                 context, DB_NAME, null, DB_VERSION);
@@ -35,8 +57,8 @@ public class AssignedChoreDB {
 
     /**
      * Inserts the course into the local sqlite table. Returns true if successful, false otherwise.
-     * @param name
-     * @param chore
+     * @param name fills the name variable with current name data
+     * @param chore fills the chore variable with current chore data
      * @return true or false
      */
     public boolean insertAssignedChore(String name, String chore) {
@@ -83,6 +105,9 @@ public class AssignedChoreDB {
         return list;
     }
 
+    /**
+     * Closes the database.
+     */
     public void closeDB() {
 
         mSQLiteDatabase.close();
